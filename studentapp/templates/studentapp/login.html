@@ -1,0 +1,24 @@
+ {% extends "studentapp/base.html" %}
+ {% block content %}
+   <div class="box">
+       <form action ="" method="post">
+            <h2>Sign in</h2>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <span>Username</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="">Forget password</a>
+                <a href="">SignUp</a>
+            </div>
+            <input type="submit" value="login">
+        </div>
+    </form>
+    
+{% endblock %}

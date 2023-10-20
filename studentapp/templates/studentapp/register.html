@@ -1,0 +1,45 @@
+{% extends "studentapp/base.html" %}
+{% block content %}
+
+    <div class="box" style="height:90vh">
+       <form action ="" method="post">
+            <h2>Sign in</h2>
+            <div class="inputBox" style=" margin-top: 25px;">
+                <input type="text" required="required">
+                <span>Name</span>
+                <i></i>
+            </div>
+            <div class="inputBox" style=" margin-top: 25px;">
+                <input type="text" required="required">
+                <span>Username</span>
+                <i></i>
+            </div>
+            <div class="inputBox" style=" margin-top: 25px;">
+                <input type="text" required="required">
+                <span>Address</span>
+                <i></i>
+            </div>
+            <div class="inputBox" style=" margin-top: 25px;">
+                <input type="number" required="required">
+                <span>Age</span>
+                <i></i>
+            </div>
+            <div class="inputBox" style=" margin-top: 25px;">
+                <input type="email" required="required">
+                <span>Email</span>
+                <i></i>
+            </div>
+            <div class="inputBox" style=" margin-top: 25px;">
+                <input type="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="{% url 'login_page' %}">login</a>
+            </div>
+            <input type="submit" value="register">
+        </div>
+    </form>
+</div>
+
+{% endblock %}
