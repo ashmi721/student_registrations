@@ -2,10 +2,12 @@
 {% block content %}
 
     <div class="box" style="height:90vh">
-       <form action ="" method="post">
-            <h2>Sign in</h2>
-            <div class="inputBox" style=" margin-top: 25px;">
-                <input type="text" required="required">
+       <form action ="{% url 'register_page' %}" method="post">
+           <h2>Sign in</h2>
+        {% csrf_token %}
+        <div class="inputBox" style=" margin-top: 25px;">
+        {{ form }}
+                {% comment %} <input type="text" required="required">
                 <span>Name</span>
                 <i></i>
             </div>
@@ -41,9 +43,9 @@
             </div>
             <div class="links">
                 <a href="{% url 'login_page' %}">login</a>
-            </div>
-            <input type="submit" value="register">
+            </div> {% endcomment %}
         </div>
+            <input type="submit" value="register">
     </form>
 </div>
 
