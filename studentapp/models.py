@@ -10,6 +10,7 @@ class Student(models.Model):
     age = models.IntegerField()
     address=models.CharField(max_length=100)
     contact=models.CharField(max_length=14)
+    password=models.CharField(max_length=14)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

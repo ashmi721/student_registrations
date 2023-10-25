@@ -1,51 +1,65 @@
 {% extends "studentapp/base.html" %}
 {% block content %}
 
-    <div class="box" style="height:90vh">
-       <form action ="{% url 'register_page' %}" method="post">
-           <h2>Sign in</h2>
-        {% csrf_token %}
-        <div class="inputBox" style=" margin-top: 25px;">
-        {{ form }}
-                {% comment %} <input type="text" required="required">
-                <span>Name</span>
+    <div class="box" style="height:95vh">
+        <form action ="{% url 'register_page' %}" method="post">
+            <h2>Sign in</h2>
+         {% csrf_token %}
+            <div class="inputBox" style=" margin: 10px;">
+         <input type="text" name="first_name" >
+                <span>First_Name</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin-top: 25px;">
-                <input type="text" required="required">
+            <div class="inputBox" style=" margin: 10px;">
+         <input type="text" name="last_name" >
+                <span>Last_Name</span>
+                <i></i>
+            </div>
+            <div class="inputBox" style=" margin: 10px;">
+                <input type="text" name="username" >
                 <span>Username</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin-top: 25px;">
-                <input type="email" required="required">
+            <div class="inputBox" style=" margin: 10px;">
+                <input type="email" name="email" >
                 <span>Email</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin-top: 25px;">
-                <input type="text" required="required">
+            <div class="inputBox" style=" margin: 10px;">
+                <input type="text" name="city" >
+                <span>City</span>
+                <i></i>
+            </div>
+            <div class="inputBox" style=" margin: 10px;">
+                <input type="text" name="address" >
                 <span>Address</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin-top: 25px;">
-                <input type="number" required="required">
+            <div class="inputBox" style=" margin: 10px;">
+                <input type="number" name="age" >
                 <span>Age</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin-top: 25px;">
-                <input type="number" required="required">
+            <div class="inputBox" style=" margin: 10px;">
+                <input type="number" name="contact" >
+                <span>Contact</span>
+                <i></i>
+            </div>
+            {% comment %} <div class="inputBox" style=" margin: 10px;">
+                <input type="text" name="grade" >
                 <span>class</span>
                 <i></i>
-            </div>
-            <div class="inputBox" style=" margin-top: 25px;">
-                <input type="password" required="required">
+            </div> {% endcomment %}
+            <div class="inputBox" style=" margin: 10px;">
+                <input type="password" name="password" >
                 <span>Password</span>
                 <i></i>
-            </div>
+            </div> 
             <div class="links">
                 <a href="{% url 'login_page' %}">login</a>
-            </div> {% endcomment %}
-        </div>
-            <input type="submit" value="register">
+                <input type="submit" value="register">
+            </div> 
+            </div>
     </form>
 </div>
 
