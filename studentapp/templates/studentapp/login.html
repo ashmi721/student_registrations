@@ -1,17 +1,18 @@
  {% extends "studentapp/base.html" %}
  {% block content %}
    <div class="box">
-       <form action ="" method="post">
+       <form action ="{% url 'login_page' %}" method="post">
             <h2>Sign in</h2>
+            {% csrf_token %}
             <div class="inputBox">
-                <input type="text" required="required">
+                <input type="text" name="username">
                 <span>Username</span>
-                <i></i>
+               
             </div>
             <div class="inputBox">
-                <input type="password" required="required">
+                <input type="password" name="password">
                 <span>Password</span>
-                <i></i>
+               
             </div>
             <div class="links">
                 <a href="">Forget password</a>

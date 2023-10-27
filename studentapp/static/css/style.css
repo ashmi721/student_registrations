@@ -110,9 +110,7 @@ z-index: 10;
     height: 2px;
     background: rgb(54, 139, 168);
     border-radius: 4px;
-   z-index: 9;
-    
-   
+   z-index: 9;   
 }
 .inputBox input:valid~i,
 .inputBox input:focus~i{

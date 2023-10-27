@@ -2,55 +2,62 @@
 {% block content %}
 
     <div class="box" style="height:95vh">
+        {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-danger" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+        {% endif %}
         <form action ="{% url 'register_page' %}" method="post">
             <h2>Sign in</h2>
          {% csrf_token %}
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
          <input type="text" name="first_name" >
                 <span>First_Name</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
          <input type="text" name="last_name" >
                 <span>Last_Name</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
                 <input type="text" name="username" >
                 <span>Username</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
                 <input type="email" name="email" >
                 <span>Email</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
                 <input type="text" name="city" >
                 <span>City</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
                 <input type="text" name="address" >
                 <span>Address</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
                 <input type="number" name="age" >
                 <span>Age</span>
                 <i></i>
             </div>
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
                 <input type="number" name="contact" >
                 <span>Contact</span>
                 <i></i>
             </div>
-            {% comment %} <div class="inputBox" style=" margin: 10px;">
+            {% comment %} <div class="inputBox" style=" margin: 1px;">
                 <input type="text" name="grade" >
                 <span>class</span>
                 <i></i>
             </div> {% endcomment %}
-            <div class="inputBox" style=" margin: 10px;">
+            <div class="inputBox" style=" margin: 1px;">
                 <input type="password" name="password" >
                 <span>Password</span>
                 <i></i>
