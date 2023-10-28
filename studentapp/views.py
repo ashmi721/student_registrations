@@ -17,10 +17,26 @@ def user_register(request):
         address=request.POST.get("address")
         age=request.POST.get("age")
         contact=request.POST.get("contact") 
-        password=request.POST.get("password")
+        password=request.POST.get("password") 
+        conf_password=request.POST.get("conf_password") 
         
-        Student.objects.create(first_name=first_name,last_name=last_name,username=username,email=email,city=city,address=address,age=age,contact=contact,password=password)
-        return redirect("/login")
+        if password != conf_password:
+            error = "Password and Conform Password field doesn't match"
+            messages.error(request,error)
+            return redirect("/register")
+       # Check if the username or email already exists
+        existing_user = Student.objects.filter(username=username).exists()    
+        existing_email = Student.objects.filter(email=email).exists()
+
+        if existing_user or existing_email:
+            error = "Username or Email already exists"
+            messages.error(request, error)
+            return redirect("/register")
+        else:
+            # If the user or email does not exist, create a new Student object
+            Student.objects.create(first_name=first_name, last_name=last_name, username=username, email=email, city=city, address=address, age=age, contact=contact, password=password,conf_password=conf_password)
+            return redirect("/login")
+        
     return render(request,"studentapp/register.html",context={"title":"registrations"})
 
 def user_login(request):

@@ -15,8 +15,8 @@ body{
 }
 .box{
     position: relative;
-    width: 380px;
-    height: 420px;
+    width: 420px;
+    height: 520px;
     background: #1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -38,11 +38,11 @@ body{
     left: -50%;
     position: absolute;
     width: 380px;
-    height: 420px;
+    height: 520px;
     background: rgb(61, 157, 189);
     transform-origin: bottom right;
-    animation:animate 6s linear infinite;
-    animation-delay:-3s ;
+    animation:animate 7s linear infinite;
+    animation-delay:-2s ;
 }
 @keyframes animate{
     0%{
@@ -119,7 +119,7 @@ z-index: 10;
 .links{
     display: flex;
     justify-content: space-between;
-
+    padding: 2px;
 }
 .links a{
     margin: 10px 0;

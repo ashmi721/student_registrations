@@ -7,10 +7,10 @@ class Student(models.Model):
     username = models.CharField(max_length=20)
     email = models.EmailField()
     city = models.CharField(max_length=50)
-    age = models.IntegerField()
     address=models.CharField(max_length=100)
     contact=models.CharField(max_length=14)
-    password=models.CharField(max_length=14)
+    password=models.CharField(max_length=16)
+    conf_password=models.CharField(max_length=16,default='')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
