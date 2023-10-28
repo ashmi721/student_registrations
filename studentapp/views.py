@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
-from .models import Student
+from .models import Student,Profile
 # Create your views here.
 def home(request):
     return HttpResponse("hello world")
@@ -32,11 +32,16 @@ def user_register(request):
             error = "Username or Email already exists"
             messages.error(request, error)
             return redirect("/register")
+        
         else:
             # If the user or email does not exist, create a new Student object
-            Student.objects.create(first_name=first_name, last_name=last_name, username=username, email=email, city=city, address=address, age=age, contact=contact, password=password,conf_password=conf_password)
-            return redirect("/login")
-        
+           student = Student.objects.create(first_name=first_name, last_name=last_name, username=username, email=email, city=city, address=address, age=age, contact=contact, password=password,conf_password=conf_password)
+           profile_data={
+            "student":student,   
+            "profile_pic":"N/A"
+                }
+           profile=Profile.objects.create(**[profile_data])
+           return redirect("/login")    
     return render(request,"studentapp/register.html",context={"title":"registrations"})
 
 def user_login(request):
