@@ -1,8 +1,10 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib import messages
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from .models import Student,Profile
+from .helper import save_file
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def home(request):
     return HttpResponse("hello world")
@@ -38,7 +40,7 @@ def user_register(request):
            student = Student.objects.create(first_name=first_name, last_name=last_name, username=username, email=email, city=city, address=address, age=age, contact=contact, password=password,conf_password=conf_password)
            profile_data={
             "student":student,   
-            "profile_pic":"N/A"
+            "profile_pic":"https://png.pngitem.com/pimgs/s/111-1114675_user-login-person-man-enter-person-login-icon.png"
                 }
            profile=Profile.objects.create(**[profile_data])
            return redirect("/login")    
@@ -64,3 +66,9 @@ def user_login(request):
             messages.error(request, error)
             return redirect("/login")
     return render(request,"studentapp/login.html")
+
+
+def user_profile(request):
+    Student_id = request.student.pk
+    profile= Profile.objects.get(student_id=Student_id)
+    return render(request,"studentapp/profile.html",)
