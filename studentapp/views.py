@@ -69,6 +69,6 @@ def user_login(request):
 
 
 def user_profile(request):
-    Student_id = request.student.pk
-    profile= Profile.objects.get(student_id=Student_id)
+    # Student_id = request.student.pk
+    # profile= Profile.objects.get(student_id=Student_id)
     return render(request,"studentapp/profile.html",)
