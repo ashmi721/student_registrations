@@ -1,15 +1,15 @@
  {% extends "studentapp/base.html" %}
  {% block content %}
    <div class="box">
-    {% if messages %}
-                {% for message in messages %}
-                  <div class="alert alert-danger" role="alert">
-                    {{ message }}
-                  </div>
-                {% endfor %}
-                {% endif %}
-       <form action ="{% url 'login_page' %}" method="post">
-            <h2>Sign in</h2>
+     <form action ="{% url 'login_page' %}" method="post">
+       <h2>Sign in</h2>
+       {% if messages %}
+                   {% for message in messages %}
+                     <div class="alert alert-danger" role="alert">
+                       {{ message }}
+                     </div>
+                   {% endfor %}
+                   {% endif %}
             {% csrf_token %}
             <div class="inputBox">
                 <input type="text" name="username">
