@@ -1,10 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .forms import UserRegisterForm
+from .forms import UserRegistrationForm
 from .models import User,Profile
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
-from .helper import save_file
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -12,9 +11,10 @@ def home(request):
     return HttpResponse("hello world")
 
 def user_register(request):
-    form = UserRegisterForm()
+    form = UserRegistrationForm()
+    print(form)
     if request.method == 'POST':
-        form_data = UserRegisterForm(request.POST)
+        form_data = UserRegistrationForm(request.POST)
        
         if form_data.is_valid():
             print("Form Data:",form_data.cleaned_data)
@@ -63,7 +63,7 @@ def user_register(request):
           return redirect("/register")
       
            
-    return render(request,"studentapp/register.html",context={"title":"registrations"})
+    return render(request,"studentapp/register.html",{'form': form})
 
 def user_login(request):
     # if request.method == "POST":

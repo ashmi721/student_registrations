@@ -1,8 +1,9 @@
 {% extends "studentapp/base.html" %}
 {% block content %}
 
-    <div class="box" style="height:97vh">
-        <form action ="{% url 'register_page' %}" method="post" enctype="multipart/form-data">
+<div class="box" style="height:97vh">
+  <form action ="{% url 'register_page' %}" method="post" enctype="multipart/form-data">
+          <h2>Sign in</h2>
             {% if messages %}
             {% for message in messages %}
               <div class="alert alert-danger" role="alert">
@@ -10,7 +11,6 @@
               </div>
             {% endfor %}
             {% endif %}
-            <h2>Sign in</h2>
             <div class="inputBox" style=" margin: 1px;">
                 {% csrf_token %}
                 {{ form }}
