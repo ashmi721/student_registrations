@@ -92,28 +92,28 @@ def user_login(request):
 @login_required
 def user_profile(request):
     User_id = request.user.pk
-    profile= Profile.objects.get(user_id=User_id)
-    print(profile)
-    # if request.method == "POST":
-    #     city=request.POST.get("city")
-    #     address=request.POST.get("address")
-    #     contact=request.POST.get("contact")
-    #     profile_pic=request.FILES.get("profile_img")
-    #     profile_pic_url = save_file(request,profile_pic)
-    #     print("City: ",city,"Address: ",address,"contact:",contact, "Profile_pic: ",profile_pic_url) 
+    profile= Profile.objects.get(student_id=User_id)
+    # print(profile)
+    if request.method == "POST":
+        city=request.POST.get("city")
+        address=request.POST.get("address")
+        contact=request.POST.get("contact")
+        profile_pic=request.FILES.get("profile_img")
+        # profile_pic_url = save_file(request,profile_pic)
+        print("City: ",city,"Address: ",address,"contact:",contact, "Profile_pic: ",profile_pic) 
         
-    #     if city != profile.city:
-    #         profile.city = city
+        if city != profile.city:
+            profile.city = city
             
-    #     if address != profile.address:
-    #         profile.address = address
+        if address != profile.address:
+            profile.address = address
             
-    #     if contact != profile.contact:
-    #         profile.contact = contact
+        if contact != profile.contact:
+            profile.contact = contact
             
-    #     if profile_pic_url is not None:
-    #         if profile_pic_url != profile.profile_pic:
-    #             profile.profile_pic = profile_pic_url
-    #     profile.save()
-    #     return redirect("/profile")
+        if profile_pic_url is not None:
+            if profile_pic_url != profile.profile_pic:
+                profile.profile_pic = profile_pic_url
+        profile.save()
+        return redirect("/profile")
     return render(request,"studentapp/profile.html",{'profile':profile })
