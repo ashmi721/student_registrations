@@ -20,7 +20,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Profile(models.Model):
     student = models.ForeignKey(User,on_delete=models.CASCADE)
-    contact = models.CharField(max_length=14,default='98')
+    contact = models.CharField(max_length=14,default='')
     address = models.CharField(max_length=50, default='')
     city = models.CharField(max_length=50, default='')
     profile_pic = models.CharField(max_length=150, default='')

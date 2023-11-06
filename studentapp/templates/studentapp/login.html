@@ -21,11 +21,13 @@
                 <span>Password</span>
                
             </div>
-            <div class="links">
-                <a href="">Forget password</a>
-                <a href="{% url 'register_page' %}">SignUp</a>
+            <div class="pt-1 mb-4 text-right">
+              <input type="submit" value="login">
             </div>
-            <input type="submit" value="login">
+                <a href="">Forget password</a>
+                <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="{% url 'register_page' %}"
+                  style="color: #393f81;">Register here</a></p>
+               
         </div>
     </form>    
 {% endblock %}
