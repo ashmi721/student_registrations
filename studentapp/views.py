@@ -99,9 +99,9 @@ def user_profile(request):
         address=request.POST.get("address")
         contact=request.POST.get("contact")
         profile_pic=request.FILES.get("profile_img")
-        # profile_pic_url = save_file(request,profile_pic)
+        profile_pic_url = save_file(request,profile_pic)
         print("City: ",city,"Address: ",address,"contact:",contact, "Profile_pic: ",profile_pic) 
-        
+    
         if city != profile.city:
             profile.city = city
             
@@ -116,4 +116,4 @@ def user_profile(request):
                 profile.profile_pic = profile_pic_url
         profile.save()
         return redirect("/profile")
-    return render(request,"studentapp/profile.html",{'profile':profile })
+    return render(request,"studentapp/profile.html",{'profile':profile})
