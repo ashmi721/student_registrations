@@ -13,9 +13,11 @@
             {% endif %}
             <div class="inputBox" style=" margin: 1px;">
                 {% csrf_token %}
+                <div class="form-control">
+                <label for="id_first_name"><i class="bi bi-person-fill"></i></label>
                 {{ form }}
             </div>
-          
+          </div>
             <div class="links">
                 <a href="{% url 'login_page' %}">login</a>
                 <input type="submit" value="register">

@@ -8,8 +8,8 @@ from django.contrib.auth.decorators import login_required
 from .helper import save_file
 # Create your views here.
 def home(request):
-    return HttpResponse("hello world")
-
+    # return HttpResponse("hello world")
+     return render(request,"studentapp/index.html",)
 def user_register(request):
     form = UserRegistrationForm()
     print(form)
@@ -117,3 +117,7 @@ def user_profile(request):
         profile.save()
         return redirect("/profile")
     return render(request,"studentapp/profile.html",{'profile':profile})
+
+def user_logout(request):
+    logout(request)
+    return redirect("/login")

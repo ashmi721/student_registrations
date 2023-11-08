@@ -18,6 +18,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome
     </head>
 <body>
     {% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
+              <a class="nav-link border rounded py-1 px-3 nav-link d-flex align-items-center" href="{% url 'logout_page' %}">Sign out 
+              <i class="fa fa-sign-out"></i>
+            </a>
+        </li>
+    </ul>
+
+      <span style="padding:10px"> 
+        <div class="alert alert-danger" role="alert">
+         welcome, {{ request.session.name }}
+         
+        </div>
+      </span>
+      {% comment %} {% endif %} {% endcomment %}
+    </div>
+</nav>
     {% endblock %}
 </body>
 </html>

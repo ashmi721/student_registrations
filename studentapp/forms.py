@@ -3,20 +3,20 @@ from django.contrib.auth.models import User
 
 class UserRegistrationForm(forms.Form):
     first_name = forms.CharField(max_length=100, widget=forms.TextInput(
-        attrs={"class": "form-control", "placeholder": "Enter First Name"}))
+        attrs={"class": "form-control", "placeholder":""}))
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(
-        attrs={"class": "form-control", "placeholder": "Enter Last Name"}))
+        attrs={"class": "form-control", "placeholder": ""}))
     username = forms.CharField(max_length=100, widget=forms.TextInput(
-        attrs={"class": "form-control", "placeholder": "Enter Username"}))
+        attrs={"class": "form-control", "placeholder": ""}))
     email = forms.EmailField(widget=forms.EmailInput(
-        attrs={"class": "form-control", "placeholder": "Enter Email"}))
+        attrs={"class": "form-control", "placeholder": ""}))
     city = forms.CharField(max_length=100, widget=forms.TextInput(
-        attrs={"class": "form-control", "placeholder": "Enter City"}))
+        attrs={"class": "form-control", "placeholder": ""}))
     address = forms.CharField(max_length=100, widget=forms.TextInput(
-        attrs={"class": "form-control", "placeholder": "Enter Address"}))
+        attrs={"class": "form-control", "placeholder": ""}))
     contact = forms.CharField(max_length=100, widget=forms.TextInput(
-        attrs={"class": "form-control", "placeholder": "Enter Contact"}))
+        attrs={"class": "form-control", "placeholder": ""}))
     password = forms.CharField(max_length=100, widget=forms.PasswordInput(
-        attrs={"class": "form-control", "placeholder": "Enter Password"}))
+        attrs={"class": "form-control", "placeholder": ""}))
     conform_password = forms.CharField(max_length=100, widget=forms.PasswordInput(
-        attrs={"class": "form-control", "placeholder": "Repeat your Password"}))        
+        attrs={"class": "form-control", "placeholder": ""}))        

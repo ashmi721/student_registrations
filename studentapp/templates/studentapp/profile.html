@@ -99,7 +99,23 @@
                   </div>
                   <hr>
                   <div class="row">
-                    <div class="col-sm-3"></div>
+                    {% comment %} <div class="col-sm-3">
+                      {% if request.user.is_authenticated %}
+                      <a
+                      href="{% url 'logout_page' %}"
+                      class="border rounded py-1 px-3 nav-link d-flex align-items-center"
+                    >
+                      <i class="fa fa-sign-out"></i>
+                      <p class="d-none d-md-block mb-0">Sign out</p>
+                    </a>
+                    <span style="padding:10px"> 
+                      <div class="alert alert-danger" role="alert">
+                       welcome, {{ request.session.name }}
+                       
+                      </div>
+                    </span>
+                    {% endif %}
+                  </div> {% endcomment %}
                     <div class="col-sm-9 text-secondary">
                       <input
                         type="submit"
@@ -111,12 +127,8 @@
                 </div>
                 </div>
               </div>
-
-             
-
             </div>
           </div>
-
         </div>
     </div>
 {% endblock %}
