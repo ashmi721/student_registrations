@@ -36,3 +36,15 @@ https://github.com/ashmi721/student_registrations.git
 ```bash
   python manage.py runserver
 ```
+
+### 8. Go to the ` 
+```bash
+http://127.0.0.1:8000/
+```
+
+### If you are view the existing profile then simply go to the 
+```bash
+http://127.0.0.1:8000/login
+```
+. username: ashmi <br>
+. password: as12
